@@ -13,3 +13,34 @@ function requestDownload() {
     alert("Incorrect password. Please contact me to request access.");
   }
 }
+
+/* NAVIGATION */
+
+function toggleMenu(button) {
+  const menu = document.getElementById("nav-menu");
+  const open = menu.classList.toggle("is-open");
+  button.setAttribute("aria-expanded", open);
+}
+
+function toggleDropdown(button) {
+  const open = button.parentElement.classList.toggle("is-open");
+  button.setAttribute("aria-expanded", open);
+}
+
+// Close dropdown when clicking elsewhere
+document.addEventListener("click", function (e) {
+  document.querySelectorAll(".dropdown.is-open").forEach(function (dropdown) {
+    if (!dropdown.contains(e.target)) {
+      dropdown.classList.remove("is-open");
+      dropdown.querySelector(".dropdown__toggle").setAttribute("aria-expanded", false);
+    }
+  });
+});
+
+// Close mobile menu after choosing a link
+document.querySelectorAll("#nav-menu a").forEach(function (link) {
+  link.addEventListener("click", function () {
+    document.getElementById("nav-menu").classList.remove("is-open");
+    document.querySelector(".nav__toggle").setAttribute("aria-expanded", false);
+  });
+});
