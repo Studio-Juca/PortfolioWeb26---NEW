@@ -296,7 +296,6 @@ p { margin: 0 0 1em; }
 }
 .placeholder--card { aspect-ratio: 4 / 3; margin-bottom: 1.2rem; }
 .placeholder--wide { aspect-ratio: 16 / 9; margin-bottom: 1.2rem; }
-.placeholder--contact { aspect-ratio: 4 / 3; }
 
 /* ========== CARDS ========== */
 .card-grid {
@@ -337,26 +336,6 @@ p { margin: 0 0 1em; }
 .quote figcaption { display: flex; flex-direction: column; }
 .quote figcaption span { color: var(--onyx-light); font-size: 1rem; }
 
-/* ========== CONTACT ========== */
-.contact__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: clamp(32px, 6vw, 80px);
-}
-
-.contact__list { margin: 2rem 0 0; }
-.contact__list > div {
-  padding: 1rem 0;
-  border-top: 1px solid var(--line);
-}
-.contact__list dt {
-  font-family: var(--font-heading);
-  letter-spacing: 0.1em;
-  color: var(--chocolate-cosmos);
-}
-.contact__list dd { margin: 0; font-size: 1.25rem; }
-
 /* ========== FOOTER ========== */
 .footer {
   background: var(--chocolate-cosmos);
@@ -366,7 +345,7 @@ p { margin: 0 0 1em; }
 
 .footer__grid {
   display: grid;
-  grid-template-columns: 2fr repeat(3, 1fr);
+  grid-template-columns: 2fr repeat(4, 1fr);
   gap: 32px;
 }
 .footer__grid a:not(.brand-block) {
@@ -390,7 +369,7 @@ p { margin: 0 0 1em; }
   gap: 16px;
   margin-top: 56px;
   padding-top: 24px;
-  border-top: 1px solid rgba(255, 253, 239, 0.2);
+  border-top: 1px solid var(--goldilocks);
   font-size: 1rem;
   color: rgba(255, 253, 239, 0.7);
 }
@@ -517,7 +496,6 @@ p { margin: 0 0 1em; }
   }
 
   .hero__grid,
-  .contact__grid,
   .split,
   .card-grid--2 { grid-template-columns: 1fr; }
 
