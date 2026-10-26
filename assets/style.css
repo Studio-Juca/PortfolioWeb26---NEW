@@ -66,6 +66,9 @@ p { margin: 0 0 1em; }
 .section--dark .eyebrow { color: var(--goldilocks); }
 .section--dark .card p { color: rgba(255, 253, 239, 0.75); }
 .section--dark .lead { color: rgba(255, 253, 239, 0.85); }
+.section--dark .feature { border-top-color: rgba(255, 253, 239, 0.2); }
+.section--dark .feature__num { color: var(--goldilocks); }
+.section--dark .feature p { color: rgba(255, 253, 239, 0.75); }
 
 .section--dark .btn--dark {
   background: var(--ivory);
@@ -383,6 +386,7 @@ p { margin: 0 0 1em; }
 .project-hero { padding-block: clamp(48px, 8vw, 96px) 0; }
 .project-hero .link-arrow { display: inline-block; margin-bottom: 2rem; }
 .project-hero .lead { max-width: 46ch; }
+.project-hero--spaced { padding-bottom: clamp(24px, 4vw, 48px); }
 .hero__text .lead { max-width: none; }
 
 .project-meta {
@@ -421,6 +425,32 @@ p { margin: 0 0 1em; }
 }
 .feature p { color: var(--onyx-light); }
 
+/* Project blocks as links (only those with an href react on hover) */
+a.feature {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+a.feature .placeholder,
+a.feature img { transition: transform 0.3s, box-shadow 0.3s; }
+a.feature h3 { transition: color 0.2s; }
+
+a.feature[href]:hover .placeholder,
+a.feature[href]:hover img {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px var(--shadow);
+}
+a.feature[href]:hover h3 { color: var(--chocolate-cosmos); }
+.section--dark a.feature[href]:hover h3 { color: var(--goldilocks); }
+a.feature[href]:focus-visible {
+  outline: 2px solid var(--goldilocks);
+  outline-offset: 6px;
+}
+
+/* Space above the line matches the space between the line and the image (1.2rem) */
+.section--projects { padding-top: 1.2rem; }
+.section--projects .feature-grid { margin-top: 0; }
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -434,6 +464,39 @@ p { margin: 0 0 1em; }
 }
 .gallery--mosaic > :first-child { grid-row: span 2; }
 .gallery--mosaic > :last-child { grid-column: span 2; }
+
+/* ========== CAROUSEL ========== */
+.carousel {
+  overflow: hidden;
+  margin-top: 3rem;
+}
+
+.carousel__track {
+  display: flex;
+  width: max-content;
+  animation: carousel-scroll 45s linear infinite;
+}
+.carousel:hover .carousel__track { animation-play-state: paused; }
+
+/* Each mosaic is one panel; padding-right matches the 16px gap between images */
+.carousel .gallery--mosaic {
+  flex: 0 0 auto;
+  width: min(760px, 85vw);
+  margin: 0;
+  padding-right: 16px;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: repeat(2, clamp(130px, 18vw, 210px));
+}
+.carousel .gallery--mosaic > :first-child { grid-row: span 2; grid-column: auto; }
+
+@keyframes carousel-scroll {
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel { overflow-x: auto; }
+  .carousel__track { animation: none; }
+}
 
 .split {
   display: grid;
@@ -459,11 +522,112 @@ p { margin: 0 0 1em; }
 }
 .next-project__link:hover .next-project__title { color: var(--chocolate-cosmos); }
 
+/* ========== CASE STUDY ========== */
+/* Label on the left, content on the right */
+.cs-row {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) 2.4fr;
+  gap: clamp(24px, 5vw, 72px);
+  padding-block: 2.5rem;
+  border-top: 1px solid var(--line);
+}
+.cs-row:first-child { border-top: 0; padding-top: 0; }
+.cs-row h2 { font-size: clamp(1.7rem, 3vw, 2.3rem); }
+
+.cs-text { max-width: 62ch; }
+.cs-text p { color: var(--onyx-light); }
+
+.cs-list {
+  margin: 0 0 1em;
+  padding-left: 1.2em;
+  color: var(--onyx-light);
+}
+.cs-list li { margin-bottom: 0.4em; }
+
+/* Text with a small photo beside it */
+.cs-media {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  align-items: start;
+  gap: clamp(20px, 4vw, 48px);
+}
+.cs-media--reverse .cs-figure { order: -1; }
+
+.cs-figure { margin: 0; }
+.cs-figure figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--onyx-light);
+}
+
+.placeholder--small { aspect-ratio: 4 / 3; }
+.placeholder--thumb { aspect-ratio: 1; }
+
+/* Row of small photos */
+.cs-thumbs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+  margin-top: 1.5rem;
+}
+
+/* Numbered insights, text only */
+.cs-insights {
+  list-style: none;
+  counter-reset: insight;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px 48px;
+  margin: 3rem 0 0;
+  padding: 0;
+}
+.cs-insights--3 { grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.cs-insights li {
+  counter-increment: insight;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--line);
+}
+.cs-insights li::before {
+  content: counter(insight, decimal-leading-zero);
+  display: block;
+  font-family: var(--font-heading);
+  color: var(--chocolate-cosmos);
+  margin-bottom: 0.4rem;
+}
+.cs-insights p { color: var(--onyx-light); }
+
+/* Key numbers */
+.cs-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 3rem;
+}
+.cs-stats__num {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: clamp(2.6rem, 6vw, 4rem);
+  line-height: 1;
+  margin-bottom: 0.6rem;
+}
+.section--dark .cs-stats p { color: rgba(255, 253, 239, 0.75); }
+
+.cs-quote {
+  margin: 0 0 1.5rem;
+  padding-left: 1.2rem;
+  border-left: 2px solid var(--chocolate-cosmos);
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--onyx);
+}
+
 /* ========== RESPONSIVE ========== */
 @media (max-width: 960px) {
   .card-grid--4 { grid-template-columns: repeat(2, 1fr); }
   .card-grid--3 { grid-template-columns: 1fr; }
   .feature-grid { grid-template-columns: repeat(2, 1fr); }
+  .cs-insights--3 { grid-template-columns: repeat(2, 1fr); }
   .gallery { grid-template-columns: repeat(2, 1fr); }
   .project-meta { grid-template-columns: repeat(2, 1fr); }
   .footer__grid { grid-template-columns: repeat(3, 1fr); }
@@ -497,7 +661,14 @@ p { margin: 0 0 1em; }
 
   .hero__grid,
   .split,
+  .cs-row,
+  .cs-media,
+  .cs-insights,
+  .cs-stats,
   .card-grid--2 { grid-template-columns: 1fr; }
+
+  .cs-row { gap: 12px; }
+  .cs-media--reverse .cs-figure { order: 0; }
 
   .gallery--mosaic {
     grid-template-columns: 1fr 1fr;

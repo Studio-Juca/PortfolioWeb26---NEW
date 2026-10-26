@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Case Study | Julija Cvijanovic</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="assets/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;600&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="brand-block">
+        <img src="assets/details/JUCA_Logo-Transp-Fjerdedel.png" alt="Juca logo" class="brand-mark" />
+        <span class="brand-name">Julija Cvijanovic</span>
+      </a>
+
+      <button class="nav__toggle" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu(this)">
+        <span></span><span></span>
+      </button>
+
+      <nav class="nav__menu" id="nav-menu">
+        <a href="projectoverview.html" aria-current="page">Projects</a>
+        <div class="dropdown">
+          <button class="dropdown__toggle" onclick="toggleDropdown(this)" aria-expanded="false">Portfolio <span class="caret">&#9662;</span></button>
+          <div class="dropdown__list">
+            <a href="index.html#projects">Overview</a>
+            <a href="#" onclick="requestDownload(); return false;">Download PDF</a>
+          </div>
+        </div>
+        <a href="index.html#blog">Blog</a>
+        <a href="index.html#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- CASE STUDY HERO -->
+    <section class="project-hero">
+      <div class="container">
+        <a href="projectoverview.html" class="link-arrow">&larr; All projects</a>
+        <p class="eyebrow">Service design case study</p>
+        <h1>[Project title]</h1>
+        <p class="lead">[One or two sentences: what the service is, who it is for, and what changed because of your work.]</p>
+
+        <dl class="project-meta">
+          <div><dt>Partner</dt><dd>[Organisation / client]</dd></div>
+          <div><dt>Role</dt><dd>[Your role]</dd></div>
+          <div><dt>Duration</dt><dd>[e.g. 10 weeks, 2025]</dd></div>
+          <div><dt>Methods</dt><dd>[Interviews, journey mapping&hellip;]</dd></div>
+        </dl>
+      </div>
+      <div class="container">
+        <div class="placeholder placeholder--cover"><span>Cover image</span></div>
+      </div>
+    </section>
+
+    <!-- OVERVIEW: text only -->
+    <section class="section">
+      <div class="container">
+
+        <div class="cs-row">
+          <div class="cs-row__label">
+            <p class="eyebrow">01 &middot; Overview</p>
+            <h2>The challenge</h2>
+          </div>
+          <div class="cs-text">
+            <p>[Describe the problem in plain language. What was not working for users or for the organisation? Why did it matter now?]</p>
+            <p>[Add the brief or the question you set out to answer, e.g. &ldquo;How might we&hellip;?&rdquo;]</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTEXT: text + small photo -->
+    <section class="section section--tint">
+      <div class="container">
+        <div class="cs-row">
+          <div class="cs-row__label">
+            <p class="eyebrow">02 &middot; Context</p>
+            <h2>Understanding the service</h2>
+          </div>
+          <div class="cs-media">
+            <div class="cs-text">
+              <p>[Explain how the current service works, who the users and stakeholders are, and where the pain points appear.]</p>
+              <p>[You can mention desk research, existing data or observations here.]</p>
+            </div>
+            <figure class="cs-figure">
+              <div class="placeholder placeholder--small"><span>Photo</span></div>
+              <figcaption>[Caption: e.g. Observation at the service location]</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESEARCH: text + row of small photos -->
+    <section class="section">
+      <div class="container">
+        <div class="cs-row">
+          <div class="cs-row__label">
+            <p class="eyebrow">03 &middot; Discover</p>
+            <h2>Research</h2>
+          </div>
+          <div>
+            <div class="cs-text">
+              <p>[Which methods did you use and why? How many people did you talk to? Interviews, shadowing, workshops, surveys&hellip;]</p>
+            </div>
+            <div class="cs-thumbs">
+              <figure class="cs-figure">
+                <div class="placeholder placeholder--thumb"><span>Photo</span></div>
+                <figcaption>[Interviews]</figcaption>
+              </figure>
+              <figure class="cs-figure">
+                <div class="placeholder placeholder--thumb"><span>Photo</span></div>
+                <figcaption>[Workshop]</figcaption>
+              </figure>
+              <figure class="cs-figure">
+                <div class="placeholder placeholder--thumb"><span>Photo</span></div>
+                <figcaption>[Field notes]</figcaption>
+              </figure>
+            </div>
+            <br>
+            <div class="cs-text">
+              <p>[Which methods did you use and why? How many people did you talk to? Interviews, shadowing, workshops, surveys&hellip;]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSIGHTS - VERSION A: 2 x 2 grid (4 insights). Keep this OR version B below. -->
+    <section class="section section--tint">
+      <div class="container">
+        <p class="eyebrow">04 &middot; Define</p>
+        <h2>Key insights</h2>
+
+        <ol class="cs-insights">
+          <li>
+            <h3>[Insight one]</h3>
+            <p>[What you learned and the evidence behind it.]</p>
+          </li>
+          <li>
+            <h3>[Insight two]</h3>
+            <p>[What you learned and the evidence behind it.]</p>
+          </li>
+          <li>
+            <h3>[Insight three]</h3>
+            <p>[What you learned and the evidence behind it.]</p>
+          </li>
+          <li>
+            <h3>[Insight four]</h3>
+            <p>[What you learned and the evidence behind it.]</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- INSIGHTS - VERSION B: 3 x 2 grid (6 insights). Keep this OR version A above. -->
+    <section class="section section--tint">
+      <div class="container">
+        <p class="eyebrow">04 &middot; Define</p>
+        <h2>Key insights</h2>
+
+        <ol class="cs-insights cs-insights--3">
+          <li>
+            <h3>[Insight one]</h3>
+            <p>[What you learned and the evidence behind it.]</p>
+          </li>
+          <li>
+            <h3>[Insight two]</h3>
+            <p>[What you learned and the evidence behind it.]</p>
+          </li>
+          <li>
+            <h3>[Insight three]</h3>
+            <p>[What you learned and the evidence behind it.]</p>
+          </li>
+          <li>
+            <h3>[Insight four]</h3>
+            <p>[What you learned and the evidence behind it.]</p>
+          </li>
+          <li>
+            <h3>[Insight five]</h3>
+            <p>[What you learned and the evidence behind it.]</p>
+          </li>
+          <li>
+            <h3>[Insight six]</h3>
+            <p>[What you learned and the evidence behind it.]</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- MAPPING: small photo + text (image left) -->
+    <section class="section">
+      <div class="container">
+        <div class="cs-row">
+          <div class="cs-row__label">
+            <p class="eyebrow">Synthesis</p>
+            <h2>Mapping the journey</h2>
+          </div>
+          <div class="cs-media cs-media--reverse">
+            <div class="cs-text">
+              <p>[Describe your journey map, service blueprint or stakeholder map. Which moments mattered most?]</p>
+              <p>[Point out the opportunity areas you chose to focus on.]</p>
+            </div>
+            <figure class="cs-figure">
+              <div class="placeholder placeholder--small"><span>Journey map</span></div>
+              <figcaption>[Caption: e.g. Current-state journey map]</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONCEPT: text + small photo -->
+    <section class="section section--tint">
+      <div class="container">
+        <div class="cs-row">
+          <div class="cs-row__label">
+            <p class="eyebrow">05 &middot; Develop</p>
+            <h2>The concept</h2>
+          </div>
+          <div class="cs-media">
+            <div class="cs-text">
+              <p>[Present your solution. What does the new service look like, and how does it address the insights above?]</p>
+              <ul class="cs-list">
+                <li>[Key touchpoint or feature]</li>
+                <li>[Key touchpoint or feature]</li>
+                <li>[Key touchpoint or feature]</li>
+              </ul>
+            </div>
+            <figure class="cs-figure">
+              <div class="placeholder placeholder--small"><span>Concept</span></div>
+              <figcaption>[Caption: e.g. Prototype of the new touchpoint]</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTING: text only -->
+    <section class="section">
+      <div class="container">
+        <div class="cs-row">
+          <div class="cs-row__label">
+            <p class="eyebrow">06 &middot; Deliver</p>
+            <h2>Testing &amp; iteration</h2>
+          </div>
+          <div class="cs-text">
+            <p>[How did you test the concept? Who took part, and what did you change based on their feedback?]</p>
+            <p>[Mention the number of iterations or the most important change.]</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUTCOME: text only, key numbers -->
+    <section class="section section--dark">
+      <div class="container">
+        <p class="eyebrow">Outcome</p>
+        <h2>Results &amp; impact</h2>
+
+        <div class="cs-stats">
+          <div>
+            <span class="cs-stats__num">[00%]</span>
+            <p>[What this number means]</p>
+          </div>
+          <div>
+            <span class="cs-stats__num">[00]</span>
+            <p>[What this number means]</p>
+          </div>
+          <div>
+            <span class="cs-stats__num">[00]</span>
+            <p>[What this number means]</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REFLECTION: text only -->
+    <section class="section">
+      <div class="container">
+        <div class="cs-row">
+          <div class="cs-row__label">
+            <p class="eyebrow">07 &middot; Reflection</p>
+            <h2>What I learned</h2>
+          </div>
+          <div class="cs-text">
+            <blockquote class="cs-quote">&ldquo;[A short, memorable reflection or a quote from a user.]&rdquo;</blockquote>
+            <p>[What would you do differently? What are the next steps for the service?]</p>
+          </div>
+        </div>
+
+        <div class="btn-row">
+          <a href="projectoverview.html" class="btn btn--outline">&larr; Back to all projects</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="index.html" class="brand-block">
+            <img src="assets/details/JUCA_Logo-Transp-Fjerdedel_W.png" alt="Juca logo" class="brand-mark" />
+            <span class="brand-name">Julija Cvijanovic</span>
+          </a>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <a href="index.html#projects">Work</a>
+          <a href="projectoverview.html">Projects</a>
+          <a href="index.html#contact">Contact</a>
+          <a href="index.html#blog">Blog</a>
+        </div>
+        <div>
+          <h4>Stories</h4>
+          <a href="#">Case studies</a>
+          <a href="#">Process</a>
+          <a href="#">Insights</a>
+          <a href="#">Resources</a>
+        </div>
+        <div class="footer__col--right">
+          <h4>About</h4>
+          <a href="index.html#about">Team</a>
+          <a href="index.html#about">Capabilities</a>
+          <a href="index.html#about">Approach</a>
+          <a href="#">News</a>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>All rights reserved &copy; 2026 Julija Cvijanovic</p>
+        <div class="socials">
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">Facebook</a>
+          <a href="#">X</a>
+          <a href="#">YouTube</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

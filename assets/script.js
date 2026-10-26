@@ -44,3 +44,14 @@ document.querySelectorAll("#nav-menu a").forEach(function (link) {
     document.querySelector(".nav__toggle").setAttribute("aria-expanded", false);
   });
 });
+
+/* CAROUSEL */
+
+// Duplicate the panels so the scrolling loop has no visible jump
+document.querySelectorAll(".carousel__track").forEach(function (track) {
+  Array.from(track.children).forEach(function (panel) {
+    const clone = panel.cloneNode(true);
+    clone.setAttribute("aria-hidden", "true");
+    track.appendChild(clone);
+  });
+});
