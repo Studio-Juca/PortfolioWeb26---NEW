@@ -708,3 +708,24 @@ a.feature[href]:focus-visible {
   .feature-grid { grid-template-columns: 1fr; }
   .footer__grid { grid-template-columns: 1fr 1fr; }
 }
+
+/* ========== PROJECT TEASER ========== */
+.text-block {
+  max-width: 65ch;
+  margin-top: 1rem;
+}
+
+/* Real images in the project teaser layout (_layouts/project-teaser.html) */
+.teaser-cover {
+  width: 100%;
+  aspect-ratio: 16 / 8;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+.teaser-gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+.text-block p + p { margin-top: 1em; }
