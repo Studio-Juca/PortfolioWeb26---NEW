@@ -312,6 +312,34 @@ p { margin: 0 0 1em; }
 
 .card p { color: var(--onyx-light); }
 
+/* Card image (same size as .placeholder--card) */
+.card__img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+  margin-bottom: 1.2rem;
+}
+
+/* Cards as links (only those with an href react on hover) */
+a.card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+a.card img { transition: transform 0.3s, box-shadow 0.3s; }
+a.card h3 { transition: color 0.2s; }
+a.card[href]:hover img {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px var(--shadow);
+}
+a.card[href]:hover h3 { color: var(--chocolate-cosmos); }
+.section--dark a.card[href]:hover h3 { color: var(--goldilocks); }
+a.card[href]:focus-visible {
+  outline: 2px solid var(--goldilocks);
+  outline-offset: 6px;
+}
+
 .meta {
   font-family: var(--font-heading);
   letter-spacing: 0.08em;
@@ -582,7 +610,7 @@ a.feature[href]:focus-visible {
 .cs-figure figcaption {
   margin-top: 0.6rem;
   font-size: 0.95rem;
-  font-style: italic;
+  font-style: bold;
   color: var(--onyx-light);
 }
 
@@ -729,3 +757,95 @@ a.feature[href]:focus-visible {
   border-radius: var(--radius);
 }
 .text-block p + p { margin-top: 1em; }
+
+/* ========== FULL-WIDTH COLOUR BAND (e.g. behind a cover photo) ==========
+   Usage: <div class="cover-band" style="--band-color: #181C56;"> <div class="container"><img ...></div> </div>
+   The band lines up with the page's content column (same side spacing as the text),
+   and the image scales down on smaller screens. */
+.cover-band {
+  background: var(--band-color, #181C56);
+  width: min(100% - 2 * var(--gutter), var(--max) - 2 * var(--gutter));
+  margin-inline: auto;
+  margin-top: clamp(24px, 4vw, 48px);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.cover-band > .container { padding-inline: 0; }
+.cover-band img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin-inline: auto;
+}
+
+/* ========== TEXT + SQUARE IMAGE SIDE BY SIDE ==========
+   Text on the left, a 1:1 image filling the remaining width on the right.
+   Stacks (text first, image below) on screens narrower than 760px. */
+.intro-split {
+  display: grid;
+  grid-template-columns: minmax(0, 65ch) 1fr;
+  gap: clamp(20px, 4vw, 48px);
+  align-items: start;
+  margin-top: 1rem;
+}
+.intro-split > .text-block { margin-top: 0; }
+.intro-split > .placeholder,
+.intro-split__img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+@media (max-width: 760px) {
+  .intro-split { grid-template-columns: 1fr; }
+}
+/* Lead text inside a split (e.g. project hero): let it use the whole left column */
+.intro-split > .lead { max-width: none; margin: 0; }
+/* Smaller image variant: add "intro-split--small" next to "intro-split".
+   The image is at most 260px wide (change the number to resize it). */
+.intro-split--small {
+  --split-img-size: 260px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, var(--split-img-size));
+}
+.intro-split--small > .placeholder,
+.intro-split--small > .intro-split__img { max-width: var(--split-img-size); }
+@media (max-width: 760px) {
+  .intro-split--small { grid-template-columns: 1fr; --split-img-size: 200px; }
+}
+/* In the project hero the split starts at the very top (year label), so no extra top margin */
+.project-hero .intro-split { margin-top: 0; }
+
+/* Photo description under a cover band. Wrap the band in <figure class="cover-figure"> and add <figcaption> after it. */
+.cover-figure { margin: 0; }
+.cover-figure figcaption {
+  width: min(100% - 2 * var(--gutter), var(--max) - 2 * var(--gutter));
+  margin: 0.6rem auto 0;
+  font-size: 0.95rem;
+  font-style: bold;
+  color: var(--onyx-light);
+}
+
+/* ========== MOSAIC: FIRST IMAGE SHOWN UNCROPPED ==========
+   Add "gallery--fit-first" next to "gallery gallery--mosaic".
+   The gallery height is locked; the first image keeps its own proportions and its
+   column takes exactly the width it needs. The other images fill the remaining space. */
+.gallery--fit-first {
+  --row: clamp(180px, 22vw, 300px);   /* height of one row (two rows tall in total) */
+  grid-template-columns: auto 1fr 1fr;
+  grid-template-rows: repeat(2, var(--row));
+}
+.gallery--fit-first > .teaser-gallery-img:first-child {
+  height: calc(2 * var(--row) + 16px);
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+}
+@media (max-width: 760px) {
+  .gallery--fit-first { grid-template-columns: 1fr 1fr; grid-template-rows: none; }
+  .gallery--fit-first > .teaser-gallery-img:first-child {
+    height: 360px;
+    max-width: 100%;
+    justify-self: center;
+  }
+}

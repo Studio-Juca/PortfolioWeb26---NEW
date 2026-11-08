@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Julija Cvijanovic | Portfolio 2026</title>
+  <title>Julija Cvijanović | Portfolio 2026</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="assets/style.css">
@@ -16,7 +16,7 @@
     <div class="container nav__inner">
       <a href="index.html" class="brand-block">
         <img src="assets/details/JUCA_Logo-Transp-Fjerdedel.png" alt="Juca logo" class="brand-mark" />
-        <span class="brand-name">Julija Cvijanovic</span>
+        <span class="brand-name">Julija Cvijanović</span>
       </a>
 
       <button class="nav__toggle" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu(this)">
@@ -61,7 +61,7 @@
         </div>
         <div class="hero__media">
           <div class="intro-portrait">
-            <img src="assets/details/julijacvijanovic_photo.jpg" alt="Julija Cvijanovic" />
+            <img src="assets/details/julijaCvijanovic_photo.jpg" alt="Julija Cvijanović" />
           </div>
         </div>
       </div>
@@ -73,27 +73,16 @@
         <p class="eyebrow">Most memorable</p>
         <h2>Projects</h2>
       
-        <div class="card-grid card-grid--4">
-          <article class="card">
-            <div class="placeholder placeholder--card"><span>Image</span></div>
-            <h3>Adaptable designs</h3>
-            <p>Discover systems that evolve with your creative vision.</p>
-          </article>
-          <article class="card">
-            <div class="placeholder placeholder--card"><span>Image</span></div>
-            <h3>Intelligent frameworks</h3>
-            <p>Empower your team with tools that enhance collaboration and process.</p>
-          </article>
-          <article class="card">
-            <div class="placeholder placeholder--card"><span>Image</span></div>
-            <h3>Scalable solutions</h3>
-            <p>Designed to grow with your ambitions, supporting complex projects.</p>
-          </article>
-          <article class="card">
-            <div class="placeholder placeholder--card"><span>Image</span></div>
-            <h3>Versatile approaches</h3>
-            <p>Tailored to meet diverse needs, ensuring flexibility and innovation.</p>
-          </article>
+        <!-- Cards are made from assets/projects.js (projects with featured: true).
+             Change the card below to change how every card looks. -->
+        <div class="card-grid card-grid--4" data-projects="featured">
+          <template>
+            <a class="card" data-field="page">
+              <img class="card__img" data-field="teaser">
+              <h3 data-field="title"></h3>
+              <p data-field="summary"></p>
+            </a>
+          </template>
         </div>
       </div>
     </section>
@@ -179,29 +168,30 @@
         <div>
           <a href="index.html" class="brand-block">
             <img src="assets/details/JUCA_Logo-Transp-Fjerdedel_W.png" alt="Juca logo" class="brand-mark" />
-            <span class="brand-name">Julija Cvijanovic</span>
+            <span class="brand-name">Julija Cvijanović</span>
           </a>
         </div>
         <div>
           <a href="https://www.instagram.com/studiojuca/" target="_blank" rel="noopener noreferrer">Instagram</a>
         </div>
         <div>
-          <a href="https://www.linkedin.com/in/julijacvijanovic/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/julijaCvijanovic/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
         <div>
-          <a href="https://www.tumblr.com/blog/julicvijanovicstudio/" target="_blank" rel="noopener noreferrer">Tumblr</a>
+          <a href="https://www.tumblr.com/blog/juliCvijanovicstudio/" target="_blank" rel="noopener noreferrer">Tumblr</a>
         </div>
         <div>
-          <a href="mailto:cvijanovicjulija@gmail.com">Email</a>
+          <a href="mailto:Cvijanovicjulija@gmail.com">Email</a>
         </div>
       </div>
 
       <div class="footer__bottom">
-        <p>All rights reserved &copy; 2026 Julija Cvijanovic</p>
+        <p>All rights reserved &copy; 2026 Julija Cvijanović</p>
       </div>
     </div>
   </footer>
 
+  <script src="assets/projects.js"></script>
   <script src="assets/script.js"></script>
 </body>
 </html>

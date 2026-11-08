@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Projects | Julija Cvijanovic</title>
+  <title>Projects | Julija Cvijanović</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="assets/style.css">
@@ -16,7 +16,7 @@
     <div class="container nav__inner">
       <a href="index.html" class="brand-block">
         <img src="assets/details/JUCA_Logo-Transp-Fjerdedel.png" alt="Juca logo" class="brand-mark" />
-        <span class="brand-name">Julija Cvijanovic</span>
+        <span class="brand-name">Julija Cvijanović</span>
       </a>
 
       <button class="nav__toggle" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu(this)">
@@ -52,43 +52,17 @@
     <!-- PROJECTS -->
     <section class="section section--dark section--projects">
       <div class="container">
-        <div class="feature-grid">
-          <a class="feature" href="project-1.html">
-            <div class="placeholder placeholder--card"><span>Image</span></div>
-            <span class="feature__num">01</span>
-            <h3>Professional systems</h3>
-            <p>A scalable approach that keeps every page consistent as the project grows.</p>
-          </a>
-          <a class="feature">
-            <div class="placeholder placeholder--card"><span>Image</span></div>
-            <span class="feature__num">02</span>
-            <h3>Powerful workflows</h3>
-            <p>Organised structures that make collaboration simple and clear.</p>
-          </a>
-          <a class="feature">
-            <div class="placeholder placeholder--card"><span>Image</span></div>
-            <span class="feature__num">03</span>
-            <h3>Reliable architecture</h3>
-            <p>A solid foundation that supports complex layouts with ease.</p>
-          </a>
-          <a class="feature">
-            <div class="placeholder placeholder--card"><span>Image</span></div>
-            <span class="feature__num">04</span>
-            <h3>Consistent strategies</h3>
-            <p>Modular systems that keep design decisions aligned throughout.</p>
-          </a>
-          <a class="feature">
-            <div class="placeholder placeholder--card"><span>Image</span></div>
-            <span class="feature__num">05</span>
-            <h3>Smart foundations</h3>
-            <p>Reusable building blocks that speed up delivery.</p>
-          </a>
-          <a class="feature">
-            <div class="placeholder placeholder--card"><span>Image</span></div>
-            <span class="feature__num">06</span>
-            <h3>Clear pathways</h3>
-            <p>A smooth journey from first concept to final deployment.</p>
-          </a>
+        <!-- Cards are made from assets/projects.js (all projects, in list order).
+             Change the card below to change how every card looks. -->
+        <div class="feature-grid" data-projects="all">
+          <template>
+            <a class="feature" data-field="page">
+              <img class="card__img" data-field="teaser">
+              <span class="feature__num" data-field="number"></span>
+              <h3 data-field="title"></h3>
+              <p data-field="summary"></p>
+            </a>
+          </template>
         </div>
       </div>
     </section>
@@ -137,29 +111,30 @@
         <div>
           <a href="index.html" class="brand-block">
             <img src="assets/details/JUCA_Logo-Transp-Fjerdedel_W.png" alt="Juca logo" class="brand-mark" />
-            <span class="brand-name">Julija Cvijanovic</span>
+            <span class="brand-name">Julija Cvijanović</span>
           </a>
         </div>
         <div>
           <a href="https://www.instagram.com/studiojuca/" target="_blank" rel="noopener noreferrer">Instagram</a>
         </div>
         <div>
-          <a href="https://www.linkedin.com/in/julijacvijanovic/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/julijaCvijanovic/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
         <div>
-          <a href="https://www.tumblr.com/blog/julicvijanovicstudio/" target="_blank" rel="noopener noreferrer">Tumblr</a>
+          <a href="https://www.tumblr.com/blog/juliCvijanovicstudio/" target="_blank" rel="noopener noreferrer">Tumblr</a>
         </div>
         <div>
-          <a href="mailto:cvijanovicjulija@gmail.com">Email</a>
+          <a href="mailto:Cvijanovicjulija@gmail.com">Email</a>
         </div>
       </div>
 
       <div class="footer__bottom">
-        <p>All rights reserved &copy; 2026 Julija Cvijanovic</p>
+        <p>All rights reserved &copy; 2026 Julija Cvijanović</p>
       </div>
     </div>
   </footer>
 
+  <script src="assets/projects.js"></script>
   <script src="assets/script.js"></script>
 </body>
 </html>

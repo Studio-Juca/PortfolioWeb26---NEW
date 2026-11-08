@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>En Kombo Tur | Julija Cvijanović</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../assets/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;600&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="../index.html" class="brand-block">
+        <img src="../assets/details/JUCA_Logo-Transp-Fjerdedel.png" alt="Juca logo" class="brand-mark" />
+        <span class="brand-name">Julija Cvijanović</span>
+      </a>
+
+      <button class="nav__toggle" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu(this)">
+        <span></span><span></span>
+      </button>
+
+      <nav class="nav__menu" id="nav-menu">
+        <a href="../projectoverview.html">Projects</a>
+        <div class="dropdown">
+          <button class="dropdown__toggle" onclick="toggleDropdown(this)" aria-expanded="false">Portfolio <span class="caret">&#9662;</span></button>
+          <div class="dropdown__list">
+            <a href="../index.html#projects">Overview</a>
+            <a href="#" onclick="requestDownload(); return false;">Download PDF</a>
+          </div>
+        </div>
+        <a href="../index.html#blog">Blog</a>
+        <a href="../index.html#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- PROJECT HERO
+         The text and images marked data-field="..." are filled in from
+         assets/projects.js (the project with id "enkombotur").
+         Edit the text there, not here. Everything below this hero is written by hand. -->
+    <section class="project-hero" data-project="shelfie">
+      <div class="container">
+        <div class="intro-split intro-split--small">
+          <div>
+            <p class="eyebrow" data-field="eyebrow"></p>
+            <h1 data-field="title"></h1>
+            <p class="lead">
+              <span data-field="context"></span>
+              <br>
+              <span data-field="tagline"></span>
+            </p>
+          </div>
+          <img data-field="teaser">
+        </div>
+        <dl class="project-meta">
+          <div><dt>Client</dt><dd data-field="client"></dd></div>
+          <div><dt>Role</dt><dd data-field="role"></dd></div>
+          <div><dt>Year</dt><dd data-field="year"></dd></div>
+          <div><dt>Tools</dt><dd data-field="tools"></dd></div>
+        </dl>
+      </div>
+      <!-- Full-width blue frame around the cover photo -->
+      <figure class="cover-figure">
+        <div class="container">
+          <img src="../assets/Project-Details/EnKomboTur/Entur_Brukerreise-FØR.png"
+            alt="User journey before our travel planning service. Our user persona,
+            Bill, is shown how his workday is affected by the long commute and
+            how he has to drive to work, which is not environmentally friendly
+            or wallet-friendly.">
+        </div>
+        <!-- Photo description shown under the image: edit the text below -->
+        <figcaption>
+          User journey before En Kombo Tur. Our Bill's long daily commute by car
+          affects his whole workday, and is neither environmentally friendly nor wallet-friendly.
+        </figcaption>
+      </figure>
+      <br>
+    </section>
+
+    <!-- PROJECT INTRO -->
+    <section class="section section--tint">
+      <div class="container">
+        <p class="eyebrow">Research question</p>
+        <h2>How can we help car commuters travel more environmentally friendly?</h2>
+        <div class="intro-split">
+          <p class="text-block">
+            Based on our early concept of how the user can choose the distance of 
+            public transport they’d like, we developed ‘A Combo Trip’. 
+            <br>
+            <br>
+            ‘En Kombo Tur’, or ‘A Combo Trip’, is a travel planning service 
+            for commuters with private cars that aims to create a more 
+            customized and seamless public transport experience by guiding you 
+            to optimal public transport hubs and parking spaces.
+            <br>
+            <br>
+            There are currently no public transport travel planning services 
+            that take into account the fact that people have cars.
+            <br>
+            <br>
+            The service incorporates the concept that a parking space is 
+            reserved for the user when they choose this type of journey. 
+            This is envisioned in the same way as it is for train passengers 
+            traveling by train.
+          </p>
+          <!-- Replace with: <img class="intro-split__img" src="../assets/Project-Details/EnKomboTur/....png" alt="..."> -->
+          <img src="../assets/Project-Details/EnKomboTur/Entur_AFTER-Map.png" 
+            alt="An illustration of the userjourney Bill does which shows both the 
+            previous journey and the improved one with our service." 
+            class="intro-split__img">
+        </div>
+      </div>
+    </section>
+
+    <section class="project-hero">
+      <figure class="cover-figure">
+        <div class="container">
+          <img src="../assets/Project-Details/EnKomboTur/Entur_Brukerreise-ETTER.png"
+            alt="User journey after our travel planning service. With the service, 
+            he finds parking faster, spends less time traveling, and reduces the 
+            daily costs of each trip.">
+        </div>
+        <!-- Photo description shown under the image: edit the text below -->
+        <figcaption>
+          User journey with our service. With the service, 
+            he finds parking faster, spends less time traveling, and reduces the 
+            daily costs of each trip.
+        </figcaption>
+      </figure>
+
+      <br>
+      <br>
+
+      <figure class="cover-figure">
+        <div class="container">
+          <img src="../assets/Project-Details/EnKomboTur/Entur_EndPhoto.png"
+            alt="Final project overview. The image shows a map with the new 
+            user journey to the wharf, and then to the final destination.">
+        </div>
+        <!-- Photo description shown under the image: edit the text below -->
+        <figcaption>
+          Final project overview. The image shows a map with the new user 
+          journey to the wharf, and then to the final destination.
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- GALLERY 2 -->
+    <section class="section">
+      <div class="container">
+        <h2>Project photos</h2>
+
+        <div class="gallery gallery--mosaic gallery--fit-first">
+          <img class="teaser-gallery-img" src="../assets/Project-Details/EnKomboTur/Entur_Poster.png"
+            alt="Poster with a QR-code for our questionnaire. The poster uses Entur's designsystem.">
+          <div class="placeholder"><span>Image</span></div>
+          <div class="placeholder"><span>Image</span></div>
+          <div class="placeholder"><span>Image</span></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="../index.html" class="brand-block">
+            <img src="../assets/details/JUCA_Logo-Transp-Fjerdedel_W.png" alt="Juca logo" class="brand-mark" />
+            <span class="brand-name">Julija Cvijanović</span>
+          </a>
+        </div>
+        <div>
+          <a href="https://www.instagram.com/studiojuca/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </div>
+        <div>
+          <a href="https://www.linkedin.com/in/julijaCvijanovic/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+        <div>
+          <a href="https://www.tumblr.com/blog/juliCvijanovicstudio/" target="_blank" rel="noopener noreferrer">Tumblr</a>
+        </div>
+        <div>
+          <a href="mailto:Cvijanovicjulija@gmail.com">Email</a>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>All rights reserved &copy; 2026 Julija Cvijanović</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/projects.js"></script>
+  <script src="../assets/script.js"></script>
+</body>
+</html>
