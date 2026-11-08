@@ -66,6 +66,11 @@ document.querySelectorAll(".carousel__track").forEach(function (track) {
       </div>
       The card inside <template> is copied once per project.
 
+      Optional extras on the same <div>:
+        data-sort="newest"   newest year first (same year: order in projects.js)
+        data-sort="oldest"   oldest year first
+        data-limit="4"       show at most this many cards
+
    2) One project's info on its own page:
       <section data-project="enkombotur"> ... </section>
 
@@ -73,7 +78,7 @@ document.querySelectorAll(".carousel__track").forEach(function (track) {
       text  -> <h1 data-field="title"></h1>
       image -> <img data-field="teaser">   (alt text comes from "teaserAlt")
       link  -> <a data-field="page">       (sets the href)
-      "number" gives 01, 02, 03... based on the order in projects.js.
+      "number" gives 01, 02, 03... = the card's position in that list.
 */
 
 // Path from this page to the site's main folder ("", "../" or "../../"),
@@ -99,14 +104,17 @@ function fillProjectFields(root, project) {
   });
 }
 
+// The year used for sorting. For a span like "2022 - 2024" the last year counts.
+function projectYear(project) {
+  const years = String(project.year || "").match(/\d{4}/g);
+  return years ? Math.max.apply(null, years.map(Number)) : 0;
+}
+
 if (typeof projects !== "undefined") {
-  const numbered = projects.map(function (project, i) {
-    return Object.assign({ number: String(i + 1).padStart(2, "0") }, project);
-  });
 
   // Fill a single project's info on its own page
   document.querySelectorAll("[data-project]").forEach(function (section) {
-    const project = numbered.find(function (p) { return p.id === section.dataset.project; });
+    const project = projects.find(function (p) { return p.id === section.dataset.project; });
     if (project) {
       fillProjectFields(section, project);
     } else {
@@ -118,13 +126,18 @@ if (typeof projects !== "undefined") {
   document.querySelectorAll("[data-projects]").forEach(function (list) {
     const template = list.querySelector("template");
     const onlyFeatured = list.dataset.projects === "featured";
+    const sort = list.dataset.sort;
+    const limit = Number(list.dataset.limit) || projects.length;
 
-    numbered
-      .filter(function (p) { return !onlyFeatured || p.featured; })
-      .forEach(function (project) {
-        const card = template.content.cloneNode(true);
-        fillProjectFields(card, project);
-        list.appendChild(card);
-      });
+    let shown = projects.filter(function (p) { return !onlyFeatured || p.featured; });
+
+    if (sort === "newest") shown.sort(function (a, b) { return projectYear(b) - projectYear(a); });
+    if (sort === "oldest") shown.sort(function (a, b) { return projectYear(a) - projectYear(b); });
+
+    shown.slice(0, limit).forEach(function (project, i) {
+      const card = template.content.cloneNode(true);
+      fillProjectFields(card, Object.assign({ number: String(i + 1).padStart(2, "0") }, project));
+      list.appendChild(card);
+    });
   });
 }

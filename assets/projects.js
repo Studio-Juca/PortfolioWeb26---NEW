@@ -4,8 +4,9 @@
    the project cards (index.html, projectoverview.html) and the top
    of each project page.
 
-   - The order in this list is the order on the site (and decides
-     the 01, 02, 03... numbers on the Projects page).
+   - The front page shows the first 4 projects here with featured: true,
+     in this order. The Projects page sorts all projects by year,
+     newest first (same year: the order in this list).
    - Write all paths from the site's main folder, e.g.
      "assets/Project-Details/..." or "Projects/....html".
      The script adds "../" by itself on pages inside Projects/.
@@ -40,12 +41,12 @@ const projects = [
   {
     id: "shelfie",                 // used in data-project="..." on the project page
     title: "Shelfie",
-    eyebrow: "",
+    eyebrow: "Designsystem",
     context: "School project",
     tagline: "Expanding my Figma skills, thorough introduction to Design Systems, and working on document hygiene for efficiency.",
     summary: "An app for book clubs that makes an easier way to get a copy of the book of the month through an agreement with the libraries and bookshops.",
 
-    client: "none",
+    client: "N/A",
     role: "Individual assignment",
     year: "2024",
     tools: ["Figma"],

@@ -312,11 +312,10 @@ p { margin: 0 0 1em; }
 
 .card p { color: var(--onyx-light); }
 
-/* Card image (same size as .placeholder--card) */
+/* Card image: the whole image is shown in its own proportions (never cropped) */
 .card__img {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  height: auto;
   border-radius: var(--radius);
   margin-bottom: 1.2rem;
 }
