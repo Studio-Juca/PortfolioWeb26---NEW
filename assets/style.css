@@ -550,6 +550,38 @@ a.feature[href]:focus-visible {
   .carousel__track { animation: none; }
 }
 
+/* Pop-up text box on carousel photos (made by script.js) */
+.photo-tip {
+  position: fixed;
+  z-index: 50;
+  padding: 0.85rem 1.1rem 0.9rem;
+  background: var(--onyx);
+  color: rgba(255, 253, 239, 0.85);
+  border-top: 2px solid var(--goldilocks);
+  border-radius: var(--radius);
+  box-shadow: 0 14px 30px var(--shadow);
+  font-size: 1rem;
+  line-height: 1.45;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+.photo-tip.is-visible {
+  opacity: 1;
+  transform: none;
+}
+.photo-tip p { margin: 0; }
+.photo-tip__title {
+  font-family: var(--font-heading);
+  letter-spacing: 0.08em;
+  color: var(--goldilocks);
+  margin-bottom: 0.25rem !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .photo-tip { transform: none; transition: opacity 0.2s; }
+}
+
 .split {
   display: grid;
   grid-template-columns: 1.4fr 1fr;

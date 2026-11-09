@@ -57,6 +57,68 @@ document.querySelectorAll(".carousel__track").forEach(function (track) {
 });
 
 
+/* CAROUSEL PHOTO POP-UPS
+   When the mouse rests on a carousel photo, a small text box appears after
+   a short pause. Text per photo (add to the <img>):
+     data-title="Where / what"       gold heading (optional)
+     data-caption="Short context"    the text (if missing, the alt text is used)
+*/
+const PHOTO_TIP_DELAY = 1200;   // milliseconds before the box appears
+
+const photoTip = document.createElement("div");
+photoTip.className = "photo-tip";
+photoTip.setAttribute("aria-hidden", "true");
+document.body.appendChild(photoTip);
+
+let photoTipTimer = null;
+
+function showPhotoTip(img) {
+  const title = img.dataset.title || "";
+  const text = img.dataset.caption || img.alt || "";
+  if (!title && !text) return;
+
+  photoTip.innerHTML = "";
+  if (title) {
+    const heading = document.createElement("p");
+    heading.className = "photo-tip__title";
+    heading.textContent = title;
+    photoTip.appendChild(heading);
+  }
+  if (text) {
+    const body = document.createElement("p");
+    body.textContent = text;
+    photoTip.appendChild(body);
+  }
+
+  // Place the box inside the photo, at its bottom-left corner
+  const box = img.getBoundingClientRect();
+  photoTip.style.maxWidth = Math.max(220, Math.min(320, box.width - 24)) + "px";
+  const tipHeight = photoTip.offsetHeight;
+  const tipWidth = photoTip.offsetWidth;
+  const left = Math.min(Math.max(box.left + 12, 8), window.innerWidth - tipWidth - 8);
+  const top = Math.max(box.bottom - tipHeight - 12, 8);
+  photoTip.style.left = left + "px";
+  photoTip.style.top = top + "px";
+  photoTip.classList.add("is-visible");
+}
+
+function hidePhotoTip() {
+  clearTimeout(photoTipTimer);
+  photoTip.classList.remove("is-visible");
+}
+
+document.querySelectorAll(".carousel .teaser-gallery-img").forEach(function (img) {
+  img.addEventListener("pointerenter", function (e) {
+    if (e.pointerType !== "mouse") return;   // touch screens have no hover
+    clearTimeout(photoTipTimer);
+    photoTipTimer = setTimeout(function () { showPhotoTip(img); }, PHOTO_TIP_DELAY);
+  });
+  img.addEventListener("pointerleave", hidePhotoTip);
+});
+
+window.addEventListener("scroll", hidePhotoTip, { passive: true });
+
+
 /* PROJECTS (data from projects.js)
 
    1) A list of project cards:
