@@ -79,22 +79,22 @@ const projects = [
   },
 
     {
-    id: "navi",                 // used in data-project="..." on the project page
-    title: "Navi",
-    eyebrow: "Mobile guide for exchange students",
+    id: "pots",                 // used in data-project="..." on the project page
+    title: "Protection of the Season",
+    eyebrow: "Artist's book",
     context: "4th year - Semester project, exchange year in South Korea",
-    tagline: "A mobile guide for International Students at Seoul National University (SNU) for an easier application process and boosting the exploration rate in their free time.",
-    summary: "Will be published soon! ‘NAVI’ is an assistance for exchange students accepted to SNU with the intention to create a clearer application process, and further function as an exploration boost by providing tailor-made activities depending on the user's preferences.",
+    tagline: "",
+    summary: "Will be published soon! By challanging the format of what an “Artist’s Book” could be, I made a collection of hand-crocheted key chain pouches accompanied with their own personalised booklet called ‘Protection fo the Season’. The project is inspired by the feeling of homesickness, and takes inspiration of cultural details from my two nationalities, Serbian and Norwegian.",
 
-    client: "N/A",
+    exhibited: "Fukuoka Art Book Fair 2026, Fukuoka, Japan",
     role: "Individual assignment",
-    year: "2025",
-    tools: ["Figma, Google Forms,"],
+    year: "2026",
+    tools: ["Crocheting, Figma"],
 
-    teaser: "assets/Project-Details/Navi/Navi_TeaserPhoto_Square.png",
+    teaser: "assets/Project-Details/ProtectionOfTheSeason/PotS_TeaserPhoto_TransparentSquare.png",
     teaserAlt: "Teaser image for the project.",
 
-    // page: "Projects/Navi_Project-teaser.html",
+    // page: "Projects/PotS_Project-teaser.html",
     featured: true                    // true = also shown on the front page
   },
 
