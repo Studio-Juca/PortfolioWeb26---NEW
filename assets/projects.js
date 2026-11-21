@@ -38,7 +38,7 @@ const projects = [
 
   // Copy the block above (from { to },) to add the next project.
 
-  {
+  /* {
     id: "shelfie",                 // used in data-project="..." on the project page
     title: "Shelfie",
     eyebrow: "Designsystem",
@@ -57,5 +57,7 @@ const projects = [
     page: "Projects/Shelfie_Project-teaser.html",
     featured: true                    // true = also shown on the front page
   },
+
+  */
 
 ];
