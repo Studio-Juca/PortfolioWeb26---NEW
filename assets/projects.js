@@ -38,13 +38,13 @@ const projects = [
 
   // Copy the block above (from { to },) to add the next project.
 
-  /* {
+   {
     id: "shelfie",                 // used in data-project="..." on the project page
     title: "Shelfie",
     eyebrow: "Designsystem",
     context: "School project",
     tagline: "Expanding my Figma skills, thorough introduction to Design Systems, and working on document hygiene for efficiency.",
-    summary: "An app for book clubs that makes an easier way to get a copy of the book of the month through an agreement with the libraries and bookshops.",
+    summary: "Will be published soon! This is an app for book clubs that makes an easier way to get a copy of the book of the month through an agreement with the libraries and bookshops.",
 
     client: "N/A",
     role: "Individual assignment",
@@ -54,10 +54,10 @@ const projects = [
     teaser: "assets/Project-Details/Shelfie/Shelfie_TeaserPhoto_Square.png",
     teaserAlt: "Teaser image for the project.",
 
-    page: "Projects/Shelfie_Project-teaser.html",
+    // page: "Projects/Shelfie_Project-teaser.html",
     featured: true                    // true = also shown on the front page
   },
 
-  */
+  
 
 ];
