@@ -19,7 +19,7 @@ const projects = [
   {
     id: "enkombotur",                 // used in data-project="..." on the project page
     title: "En Kombo Tur",
-    eyebrow: "'A Combo Trip'",
+    eyebrow: "A Combo Trip",
     context: "3rd year - Semester project",
     tagline: "From abstract numbers to engaging metrics - How to engage travelers using CO2e data?",
     summary: "A travel planning service that guides car commuters to public transport hubs and reserved parking.",
@@ -36,15 +36,15 @@ const projects = [
     featured: true                    // true = also shown on the front page
   },
 
-  // Copy the block above (from { to },) to add the next project.
+   // Copy the block above (from { to },) to add the next project.
 
    {
     id: "shelfie",                 // used in data-project="..." on the project page
     title: "Shelfie",
     eyebrow: "Designsystem",
-    context: "School project",
+    context: "2nd year - School project",
     tagline: "Expanding my Figma skills, thorough introduction to Design Systems, and working on document hygiene for efficiency.",
-    summary: "Will be published soon! This is an app for book clubs that makes an easier way to get a copy of the book of the month through an agreement with the libraries and bookshops.",
+    summary: "Will be published soon! 'Shelfie' is an app for book clubs that makes an easier way to get a copy of the book of the month through an agreement with the libraries and bookshops.",
 
     client: "N/A",
     role: "Individual assignment",
@@ -58,6 +58,44 @@ const projects = [
     featured: true                    // true = also shown on the front page
   },
 
-  
+  {
+    id: "navi",                 // used in data-project="..." on the project page
+    title: "Navi",
+    eyebrow: "Mobile guide for exchange students",
+    context: "4th year - Semester project, exchange year in South Korea",
+    tagline: "A mobile guide for International Students at Seoul National University (SNU) for an easier application process and boosting the exploration rate in their free time.",
+    summary: "Will be published soon! ‘NAVI’ is an assistance for exchange students accepted to SNU with the intention to create a clearer application process, and further function as an exploration boost by providing tailor-made activities depending on the user's preferences.",
+
+    client: "N/A",
+    role: "Individual assignment",
+    year: "2025",
+    tools: ["Figma, Google Forms,"],
+
+    teaser: "assets/Project-Details/Navi/Navi_TeaserPhoto_Square.png",
+    teaserAlt: "Teaser image for the project.",
+
+    // page: "Projects/Navi_Project-teaser.html",
+    featured: true                    // true = also shown on the front page
+  },
+
+    {
+    id: "navi",                 // used in data-project="..." on the project page
+    title: "Navi",
+    eyebrow: "Mobile guide for exchange students",
+    context: "4th year - Semester project, exchange year in South Korea",
+    tagline: "A mobile guide for International Students at Seoul National University (SNU) for an easier application process and boosting the exploration rate in their free time.",
+    summary: "Will be published soon! ‘NAVI’ is an assistance for exchange students accepted to SNU with the intention to create a clearer application process, and further function as an exploration boost by providing tailor-made activities depending on the user's preferences.",
+
+    client: "N/A",
+    role: "Individual assignment",
+    year: "2025",
+    tools: ["Figma, Google Forms,"],
+
+    teaser: "assets/Project-Details/Navi/Navi_TeaserPhoto_Square.png",
+    teaserAlt: "Teaser image for the project.",
+
+    // page: "Projects/Navi_Project-teaser.html",
+    featured: true                    // true = also shown on the front page
+  },
 
 ];
