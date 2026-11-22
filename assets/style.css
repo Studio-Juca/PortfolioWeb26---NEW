@@ -418,7 +418,9 @@ a.card[href]:focus-visible {
 
 .project-meta {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  /* All visible items share one row, however many there are */
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
   gap: 24px;
   margin: 3rem 0;
   padding-top: 1.5rem;
@@ -713,7 +715,7 @@ a.feature[href]:focus-visible {
   .feature-grid { grid-template-columns: repeat(2, 1fr); }
   .cs-insights--3 { grid-template-columns: repeat(2, 1fr); }
   .gallery { grid-template-columns: repeat(2, 1fr); }
-  .project-meta { grid-template-columns: repeat(2, 1fr); }
+  .project-meta { grid-auto-flow: row; grid-template-columns: repeat(2, 1fr); }
   .footer__grid { grid-template-columns: repeat(3, 1fr); }
   .footer__grid > div:first-child { grid-column: 1 / -1; }
 }

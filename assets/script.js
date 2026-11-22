@@ -156,7 +156,8 @@ function fillProjectFields(root, project) {
     if (el.tagName === "A") {
       if (!empty) el.href = SITE_ROOT + value;   // no href = card is not clickable
     } else if (empty) {
-      el.hidden = true;
+      // In the Client / Role / Year... row, hide the label too
+      (el.closest(".project-meta > div") || el).hidden = true;
     } else if (el.tagName === "IMG") {
       el.src = SITE_ROOT + value;
       el.alt = project[field + "Alt"] || "";
